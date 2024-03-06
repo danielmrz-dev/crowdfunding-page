@@ -23,6 +23,8 @@ const progressBar = document.querySelector(".green-part");
 let numbersBacked = document.querySelector("#backed-number");
 let totalBackers = document.querySelector(".numbers__total-backers");
 
+progressBar.style.width = `89%`;
+
 menuIcon.addEventListener("click", () => {
     let imgSource = menuIcon.getAttribute("src");
     imgSource == "images/icon-hamburger.svg"
