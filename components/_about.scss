@@ -1,0 +1,124 @@
+@use 'variables';
+
+.about {
+    background-color: variables.$White;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px variables.$Shadow;
+    &__title {
+        font-size: 1.2rem;
+        font-weight: 800;
+    }
+    &__paragraph {
+        font-size: .9rem;
+        font-weight: 500;
+        opacity: .8;
+        color: variables.$Dark-gray;
+        line-height: 24px;
+    }
+    &__editions {
+        display: flex;
+        flex-direction: column;
+        gap: .65rem;
+        border: 2px solid variables.$Border;
+        border-radius: 10px;
+        padding: 1.5rem;
+        &:last-child {
+            opacity: .3;
+        }
+    }
+    &__editions-title {
+        font-size: .85rem;
+        font-weight: 800;
+    }
+    &__editions-pledge {
+        color: variables.$Moderate-cyan;
+        font-size: .87rem;
+        font-weight: 600;
+    }
+    &__editions-paragraph {
+        padding: .75rem 0;
+        font-size: .9rem;
+        font-weight: 500;
+        opacity: .8;
+        color: variables.$Dark-gray;
+        line-height: 24px;
+    }
+    &__editions-left {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        color: variables.$Dark-gray;
+        margin: .5rem 0 .8rem;
+        strong {
+            color: variables.$Black;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+    }
+    &__editions-button {
+        color: variables.$White;
+        background-color: variables.$Moderate-cyan;
+        font-family: variables.$Commissioner;
+        border: none;
+        font-weight: 600;
+        font-size: .85rem;
+        padding: 1rem;
+        border-radius: 30px;
+        width: 70%;
+        transition: background-color .2s ease;
+        &:hover {
+            background-color: variables.$Dark-cyan;
+            cursor: pointer;
+        }
+    }
+    .out-of-stock {
+        background-color: variables.$Dark-gray;
+        cursor: not-allowed;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .about {
+        padding: 3rem;
+        &__title {
+            font-size: 1.35rem;
+        }
+        &__paragraph {
+            font-size: 1rem;
+            line-height: 30px;
+        }
+        &__editions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 2rem;
+        }
+        &__editions-title {
+            font-size: 1.25rem;
+        }
+        &__editions-pledge {
+            font-size: 1rem;
+            justify-self: flex-end;
+        }
+        &__editions-paragraph {
+            grid-area: 2 / 1 / 3 / 3;
+            padding: .75rem 0;
+            font-size: 1rem;
+            line-height: 30px;
+        }
+        &__editions-button {
+            justify-self: flex-end;
+            font-size: .85rem;
+            padding: 1rem;
+            border-radius: 30px;
+            width: 55%;
+        }
+        .out-of-stock {
+            background-color: variables.$Dark-gray;
+        }
+    }
+    
+}

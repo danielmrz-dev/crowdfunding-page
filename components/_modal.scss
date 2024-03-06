@@ -1,0 +1,303 @@
+@use 'variables';
+
+.modal {
+    position: absolute;
+    top: -35px;
+    height: 103%;
+    background-color: rgba(0, 0, 0, 0.266);
+    display: none; // flex
+    padding: 8rem 0;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__close-modal {
+        cursor: pointer;
+    }
+    &__default {
+        height: fit-content;
+        background-color: variables.$White;
+        margin: 0rem 1.5rem;
+        padding: 2rem 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    &__title {
+        font-size: 1.15rem;
+        font-weight: 800;
+    }
+
+    &__paragraph {
+        font-size: .9rem;
+        font-weight: 500;
+        opacity: .8;
+        color: variables.$Dark-gray;
+        line-height: 22px;
+    }
+
+    &__pledges {
+        border: 2px solid variables.$Border;
+        border-radius: 8px;
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+
+        label {
+            font-size: .85rem;
+            font-weight: 800;
+            transition: color .2s ease;
+            &:hover {
+                color: variables.$Moderate-cyan;
+                cursor: pointer;
+            }
+        }
+        
+        &:nth-child(6) {
+            opacity: .3;
+            cursor: not-allowed;
+            .mahogany {
+                color: black;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .border-active {
+        border: 2px solid variables.$Moderate-cyan;
+    }
+
+    &__header-grid-first {
+        display: grid;
+        align-items: center;
+        grid-template-columns: auto 1fr;
+        gap: .5rem .75rem;
+
+        input {
+            grid-area: 1 / 1 / 2 / 2;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            outline: none;
+            border: 1px solid variables.$Border-two;
+            opacity: 1;
+            cursor: pointer;
+
+            &:checked {
+                background-color: variables.$Moderate-cyan;
+                box-shadow: inset 0px 0px 0px 4px white;
+            }
+        }
+
+        span {
+            grid-area: 2 / 2;
+        }
+    }
+
+    &__header-grid {
+        @extend .modal__header-grid-first;
+
+        input {
+            grid-area: 1 / 1 / 3 / 2;
+        }
+    }
+
+    &__pledge-value {
+        color: variables.$Moderate-cyan;
+        font-size: .85rem;
+        font-weight: 700;
+    }
+
+    &__pledges-text {
+        @extend .modal__paragraph;
+    }
+
+    &__pledges-left {
+        color: variables.$Dark-gray;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        font-size: .9rem;
+
+        strong {
+            color: variables.$Black;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+    }
+
+    &__enter-pledge {
+        hr {
+            width: calc(100% + 3rem);
+            transform: translateX(-1.52rem);
+            border-color: variables.$Dark-gray;
+            opacity: .2;
+            margin-top: 0;
+        }
+
+        display: none; // flex
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__enter-pledge-text {
+        @extend .modal__paragraph;
+    }
+
+    &__pledge-inputs {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+
+        div {
+            width: fit-content;
+            position: relative;
+
+            span {
+                position: absolute;
+                top: 16px;
+                left: 20px;
+                color: variables.$Dark-gray;
+                font-weight: 700;
+                opacity: .5;
+            }
+        }
+    }
+
+    &__pledge-value-input {
+        font-family: variables.$Commissioner;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        border-radius: 30px;
+        border: 1px solid variables.$Border;
+        font-weight: 700;
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;            
+        }
+        &:focus {
+            outline: 2px solid variables.$Moderate-cyan;
+        }
+    }
+
+    &__confirm-pledge {
+        padding: 1rem 1.8rem;
+        border-radius: 30px;
+        border: none;
+        background-color: variables.$Moderate-cyan;
+        color: variables.$White;
+        font-weight: 700;
+        font-family: variables.$Commissioner;
+        transition: background-color .2s ease;
+        &:hover {
+            background-color: variables.$Dark-cyan;
+            cursor: pointer;
+        }
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .modal {
+        top: -45px;
+        height: 103%;
+        width: 100%;
+        display: none; // flex
+        justify-content: center;
+        padding: 11rem 0;
+        z-index: 2;
+        
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                width: 20px;
+            }
+        }
+        &__default {
+            max-width: 640px;
+            padding: 3rem;
+        }
+    
+        &__title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    
+        &__paragraph {
+            font-size: 1rem;
+        }
+    
+        &__pledges {
+            padding: 2rem 1.5rem 1.5rem;
+            display: grid;
+            grid-template-columns: 45px 1.5fr 1fr 1fr;
+            gap: 1rem 0;    
+            label {
+                font-size: 1.1rem;
+            }
+        }   
+        &__header-grid-first {
+            grid-area: 1 / 1 / 2 / 4;
+            display: flex;
+            gap: 1rem;
+        }    
+        &__pledge-value {
+            font-size: 1rem;
+        }    
+        &__pledges-text {
+            font-size: .95rem;
+            grid-area: 2 / 2 / 3 / 5;
+            line-height: 30px;
+        }
+    
+        &__pledges-left {
+            grid-area: 1 / 4;
+            justify-self: flex-end;
+            font-size: 1rem;    
+            strong {
+                font-size: 1.2rem;
+            }
+        }
+        &__enter-pledge {   
+            grid-area: 3 / 1 / 4 / 5;
+            display: none; //grid
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            hr {
+                grid-area: 1 / 1 / 2 / 3;
+            }
+        }
+    
+        &__enter-pledge-text {
+            grid-area: 2 / 1;
+        }
+    
+        &__pledge-inputs {
+            grid: 2 / 3;
+            display: flex;
+            div {
+                width: 100%;
+                transform: translateX(60px);
+            }
+        }
+        &__pledge-value-input {
+            width: 65%;
+            justify-self: end;
+        }    
+        &__confirm-pledge {
+            font-weight: 600;
+        }
+    }
+}

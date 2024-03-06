@@ -1,0 +1,13 @@
+.main {
+    margin: 12rem 1.5rem 2rem;
+    display: flex; // flex
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .main {
+        max-width: 730px;
+        margin: 14rem auto 7rem;
+    }
+}

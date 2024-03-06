@@ -1,0 +1,86 @@
+@use 'variables';
+@use 'modal';
+
+.ty {
+    position: fixed;
+    top: -35px;
+    height: 103%;
+    background-color: rgba(0, 0, 0, 0.266);
+    display: none; // flex
+    padding: 8rem 0;
+    .thank-you {
+        height: fit-content;
+        background-color: variables.$White;
+        margin: 1rem 1.5rem;
+        padding: 2rem 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 1.5rem;
+        &__title {
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+        &__paragraph {
+            @extend .modal__paragraph;
+            text-align: center;
+            line-height: 24px;
+        }
+        &__button {
+            padding: 1rem 2.25rem;
+            margin: .5rem 0;
+            border-radius: 30px;
+            border: none;
+            background-color: variables.$Moderate-cyan;
+            color: variables.$White;
+            font-weight: 700;
+            font-family: variables.$Commissioner;
+            transition: background-color .2s ease;
+            &:hover {
+                background-color: variables.$Dark-cyan;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .ty {
+        position: fixed;
+        top: -40px;
+        height: 105%;
+        width: 100%;
+        display: none; // flex
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
+        z-index: 2;
+        .thank-you {
+            max-width: 480px;
+            padding: 3rem;
+            gap: 1.5rem;
+            img {
+                width: 90px;
+                margin-bottom: 1.5rem;
+            }
+            &__title {
+                font-size: 1.55rem;
+            }
+            &__paragraph {
+                font-size: 1.05rem;
+                line-height: 30px;
+            }
+            &__button {
+                padding: 1rem 2.25rem;
+                margin: .5rem 0;
+                border-radius: 30px;
+                border: none;
+                background-color: variables.$Moderate-cyan;
+                color: variables.$White;
+                font-weight: 700;
+                font-family: variables.$Commissioner;
+            }
+        }
+    }
+}

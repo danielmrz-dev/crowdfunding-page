@@ -1,0 +1,128 @@
+@use 'variables';
+
+.mastercratf {
+    background-color: variables.$White;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 3.25rem 1rem 2.5rem;
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px variables.$Shadow;
+
+    &__logo {
+        position: absolute;
+        top: -30px;
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        font-weight: 800;
+        line-height: 23px;
+    }
+
+    &__paragraph {
+        color: variables.$Dark-gray;
+        font-size: .9rem;
+        opacity: .8;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    &__buttons {
+        margin-top: .5rem;
+        display: flex;
+        gap: .5rem;
+
+        div {
+            background-color: variables.$Moderate-cyan;
+            display: flex;
+            border-radius: 50%;
+            &:hover>img {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__button,
+    .mastercraft__bookmark {
+        border: none;
+    }
+
+    &__button {
+        color: variables.$White;
+        background-color: variables.$Moderate-cyan;
+        font-family: variables.$Commissioner;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0 2.5rem;
+        border-radius: 30px;
+        transition: background-color .2s ease;
+
+        &:hover {
+            background-color: variables.$Dark-cyan;
+            cursor: pointer;
+        }
+    }
+
+    &__bookmark-text {
+        display: none;
+    }
+    .bookmark-active {
+        color: variables.$Dark-cyan;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mastercratf {
+        padding: 3.75rem 1rem 2.5rem;
+        gap: 1.35rem;
+
+        br {
+            display: none;
+        }
+
+        &__title {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        &__paragraph {
+            font-size: 1rem;
+        }
+
+        &__buttons {
+            margin-top: .75rem;
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+
+            div {
+                display: flex;
+                align-items: center;
+                border-radius: 30px;
+                background-color: variables.$Border;
+                transition: background-color .2s ease;
+
+                &:hover>img {
+                    opacity: .7;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: variables.$Border-two;
+                }
+            }
+        }
+
+        &__bookmark-text {
+            display: block;
+            padding: 1rem 1.5rem 1.2rem .75rem;
+            font-weight: 700;
+            color: variables.$Dark-gray;
+        }
+    }
+}

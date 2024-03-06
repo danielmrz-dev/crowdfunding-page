@@ -1,0 +1,97 @@
+@use 'variables';
+
+.numbers {
+    background-color: variables.$White;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px variables.$Shadow;
+    text-align: center;
+
+    &__text-container {
+        display: grid;
+        gap: 1rem;
+    }
+
+    &__backed,
+    &__total-backers,
+    &__days-left {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    &__text {
+        font-size: .85rem;
+        font-weight: 400;
+        color: variables.$Dark-gray;
+    }
+
+    hr {
+        width: 4.5rem;
+        opacity: .3;
+    }
+
+    &__progress-bar {
+        margin-top: 1rem;
+        background-color: variables.$Shadow;
+        height: 12px;
+        width: 100%;
+        border-radius: 10px;
+
+        .green-part {
+            background-color: variables.$Moderate-cyan;
+            height: 12px;
+            border-radius: 10px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .numbers {
+        display: grid;
+        grid-template-columns: 23.5% 7% 23.5% 7% 23.5%;
+        padding: 2.5rem 2.5rem 3rem;
+        text-align: start;
+
+        &__text-container {
+            display: grid;
+            gap: 1rem;
+        }
+
+        &__backed,
+        &__total-backers,
+        &__days-left {
+            font-size: 2.1rem;
+        }
+
+        &__text {
+            font-size: 1rem;
+            font-weight: 400;
+            color: variables.$Dark-gray;
+        }
+
+        hr {
+            height: 60px;
+            margin-right: 2rem;
+            width: 0;
+        }
+
+        &__progress-bar {
+            grid-area: 2 / 1 / 3 / 6;
+            margin-top: 1rem;
+            background-color: variables.$Shadow;
+            height: 12px;
+            width: 100%;
+            border-radius: 10px;
+
+            .green-part {
+                background-color: variables.$Moderate-cyan;
+                height: 12px;
+                border-radius: 10px;
+            }
+        }
+    }
+}

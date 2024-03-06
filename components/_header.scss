@@ -1,0 +1,85 @@
+@use 'variables';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 1.5rem;
+    position: relative;
+    &__menu-checkbox {
+        display: none;
+    }
+    &__menu-checkbox:checked +.header__menu {
+        display: grid;
+    }
+    &__menu {
+        position: absolute;
+        top: 40px;
+        background-color: variables.$White;
+        display: none; //grid
+        width: 100%;
+        border-radius: 10px;
+        z-index: 1;
+        box-shadow: 0px 100px 200px #00000030,
+                    0px -200px 200px #00000030,
+                    100px 0px 200px #00000030,
+                    -200px 0px 200px #00000030;
+        hr {
+            width: 100%;
+            display: none;
+            opacity: .4;
+        }
+    }
+    &__menu-label:hover {
+        cursor: pointer;
+    }
+    &__menu-link {
+        text-decoration: none;
+        border-bottom: 1px solid variables.$Border;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: variables.$Black;
+        padding: 1.5rem;
+        transition: color .2s ease-in-out, text-decoration .2s ease-in-out;
+        &:nth-child(5) {
+            border: none;
+        }
+        &:hover {
+            cursor: pointer;
+            color: variables.$Moderate-cyan;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        margin: 2.5rem auto;
+        display: flex;
+        max-width: 80%;
+        label {
+            display: none;
+        }
+        &__menu {
+            position: static;
+            background-color: transparent;
+            display: flex;
+            width: fit-content;
+            box-shadow: none;
+            hr {
+                display: none;
+            }
+        }
+        &__menu-link {
+            border-bottom: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: variables.$White;
+            padding: 1rem;
+            transition: color .2s ease-in-out, text-decoration .2s ease-in-out;
+            &:hover {
+                cursor: pointer;
+                color: variables.$Moderate-cyan;
+            }
+        }
+    }
+}

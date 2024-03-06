@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@use 'components/variables';
+@use 'components/header';
+@use 'components/main';
+@use 'components/mastercraft';
+@use 'components/numbers';
+@use 'components/about';
+@use 'components/modal';
+@use 'components/modal-completed';
+
+body {
+    font-family: variables.$Commissioner;
+    background: variables.$OffWhite-Bg url('images/image-hero-mobile.jpg') top center no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        background: variables.$OffWhite-Bg url('images/image-hero-desktop.jpg') top center no-repeat;
+        background-size: contain;
+    }
+}
+
