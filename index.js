@@ -2,9 +2,7 @@ const menuIcon = document.querySelector(".header__menu-icon");
 const backProjectBtn = document.querySelector(".mastercratf__button");
 const modal = document.querySelector(".modal");
 const closeModal = document.querySelector(".modal__close-modal");
-const bookmarkContainer = document.querySelector(
-    ".mastercratf__bookmark-container"
-);
+const bookmarkContainer = document.querySelector(".mastercratf__bookmark-container");
 const bookmarkContainerIcon = document.querySelector(".bookmark-icon");
 const bookmarkText = document.querySelector(".mastercratf__bookmark-text");
 const bambooStandbtn = document.querySelector("[data-bamboo]");
